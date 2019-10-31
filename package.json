@@ -1,0 +1,96 @@
+{
+    "name": "boilerplate-react-ts",
+    "version": "1.0.0",
+    "main": "index.tsx",
+    "author": "Eduard <ptushko@gmail.com>",
+    "license": "MIT",
+    "scripts": {
+        "type:check": "tsc --noEmit",
+        "build:types": "tsc --emitDeclarationOnly",
+        "dev": "webpack-dev-server --env.mode development",
+        "prod": "webpack --env.mode production",
+        "prod:analyze": "yarn run prod  --env.presets analyze",
+        "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,css,scss}\"",
+        "format:check": "prettier --list-different \"src/**/*.{js,jsx,ts,tsx,css,scss}\"",
+        "lint": "eslint '*/**/*.{js,jsx,ts,tsx}' --quiet --fix",
+        "validate": "yarn run lint && yarn run format:check && yarn run type:check",
+        "test": "jest --coverage",
+        "test:watch": "jest --watch"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged"
+        }
+    },
+    "lint-staged": {
+        "src/**/*.{js,jsx,ts,tsx}": [
+            "eslint"
+        ],
+        "src/**/*.{js,jsx,ts,tsx,css,scss}": [
+            "prettier --write",
+            "git add"
+        ]
+    },
+    "devDependencies": {
+        "@babel/cli": "*",
+        "@babel/core": "*",
+        "@babel/plugin-proposal-class-properties": "*",
+        "@babel/plugin-proposal-object-rest-spread": "*",
+        "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+        "@babel/plugin-transform-runtime": "*",
+        "@babel/preset-env": "*",
+        "@babel/preset-react": "*",
+        "@babel/preset-typescript": "*",
+        "@types/enzyme": "*",
+        "@types/jest": "*",
+        "@types/node": "*",
+        "@types/react": "*",
+        "@types/react-dom": "*",
+        "@types/styled-components": "^4.1.20",
+        "@typescript-eslint/eslint-plugin": "*",
+        "@typescript-eslint/parser": "*",
+        "babel-jest": "*",
+        "babel-loader": "*",
+        "babel-plugin-dynamic-import-node": "*",
+        "clean-webpack-plugin": "*",
+        "css-loader": "*",
+        "enzyme": "*",
+        "enzyme-adapter-react-16": "*",
+        "enzyme-to-json": "*",
+        "eslint": "*",
+        "eslint-config-prettier": "*",
+        "eslint-plugin-jest": "*",
+        "eslint-plugin-react": "*",
+        "eslint-plugin-react-hooks": "*",
+        "file-loader": "*",
+        "html-webpack-plugin": "*",
+        "husky": "*",
+        "identity-obj-proxy": "*",
+        "jest": "*",
+        "jest-extended": "0.11.2",
+        "lint-staged": "*",
+        "mini-css-extract-plugin": "*",
+        "node-fetch": "2.6.0",
+        "node-sass": "*",
+        "optimize-css-assets-webpack-plugin": "*",
+        "prettier": "*",
+        "sass-loader": "*",
+        "style-loader": "*",
+        "svg-inline-loader": "*",
+        "terser-webpack-plugin": "*",
+        "ts-jest": "*",
+        "typescript": "*",
+        "url-loader": "*",
+        "webpack": "*",
+        "webpack-bundle-analyzer": "*",
+        "webpack-cli": "*",
+        "webpack-dev-server": "*",
+        "webpack-merge": "*"
+    },
+    "dependencies": {
+        "polished": "^3.4.2",
+        "react": "*",
+        "react-dom": "*",
+        "styled-components": "^4.4.1"
+    }
+}
