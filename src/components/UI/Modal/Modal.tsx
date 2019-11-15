@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import React, { ReactNode, memo } from 'react';
 import BackDrop from '../BackDrop/BackDrop';
 import styled from 'styled-components';
 import { Button } from '../../../elements';
@@ -58,4 +58,11 @@ const Div = styled.div`
     }
 `;
 
-export default Modal;
+function isEqual(prevProps: Props, nextProps: Props): boolean {
+    return (
+        prevProps.show === nextProps.show ||
+        prevProps.children === nextProps.children
+    );
+}
+
+export default memo(Modal, isEqual);
