@@ -7,21 +7,24 @@ module.exports = {
             '@babel/preset-env',
             {
                 modules: isTest ? 'commonjs' : false,
-                targets: [
-                    'last 2 versions',
-                    'not dead',
-                    'not < 2%',
-                    'not ie 11',
-                ],
-            },
+                targets: {
+                    browsers: [
+                        'last 2 versions',
+                        'not dead',
+                        'not < 2%',
+                        'not ie 11'
+                    ]
+                }
+            }
         ],
         '@babel/preset-react',
-        '@babel/preset-typescript',
+        '@babel/preset-typescript'
     ],
     plugins: [
         '@babel/plugin-proposal-class-properties',
         '@babel/plugin-proposal-object-rest-spread',
         '@babel/plugin-syntax-dynamic-import',
-        isTest ? 'babel-plugin-dynamic-import-node' : null,
-    ].filter(Boolean),
+        'babel-plugin-styled-components',
+        isTest ? 'babel-plugin-dynamic-import-node' : null
+    ].filter(Boolean)
 };
