@@ -41,4 +41,11 @@ const Div = styled.div`
     }
 `;
 
-export default Tooltip;
+function isEqual(prevProps: Props, nextProps: Props): boolean {
+    return (
+        prevProps.children === nextProps.children ||
+        prevProps.text === nextProps.text
+    );
+}
+
+export default React.memo(Tooltip, isEqual);
