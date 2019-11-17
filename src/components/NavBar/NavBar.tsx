@@ -25,7 +25,7 @@ const NavBar = ({
                 <div className='header-container'>
                     <div>Memory Game</div>
                     <div className='header-right'>
-                        <Tooltip text='You can choose between 4 and 40 colors'>
+                        <Tooltip text='You can choose between 5 and 40 colors'>
                             <NumberInput
                                 getNumberColors={getNumberColors}
                                 initialValue={initialValue}
