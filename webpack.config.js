@@ -1,20 +1,21 @@
-const webpack = require("webpack");
-const webpackMerge = require("webpack-merge");
-const path = require("path");
+const webpack = require('webpack');
+const webpackMerge = require('webpack-merge');
+const path = require('path');
 const modeConfig = env => require(`./build-utils/webpack.${env}`)(env);
-const presetConfig = require("./build-utils/loadPresets");
+const presetConfig = require('./build-utils/loadPresets');
 
-module.exports = ({ mode, presets } = { mode: "production", presets: [] }) => {
+module.exports = ({ mode, presets } = { mode: 'production', presets: [] }) => {
     return webpackMerge(
         {
             mode,
-            entry: "./src/index",
+            entry: './src/index',
             output: {
-                filename: "[name].bundle.js",
-                path: path.resolve(__dirname, "dist"),
+                filename: '[name].[hash].js',
+                path: path.resolve(__dirname, 'dist'),
+                publicPath: '/'
             },
             resolve: {
-                extensions: [".ts", ".tsx", ".js", ".jsx", ".json"],
+                extensions: ['.ts', '.tsx', '.js', '.jsx', '.json']
             },
 
             module: {
@@ -22,28 +23,28 @@ module.exports = ({ mode, presets } = { mode: "production", presets: [] }) => {
                     {
                         test: /\.(ts|js)x?$/,
                         exclude: /node_modules/,
-                        use: "babel-loader",
+                        use: 'babel-loader'
                     },
                     {
                         test: /\.(jp?g|png|gif|webp)$/,
                         use: [
                             {
-                                loader: "url-loader",
+                                loader: 'url-loader',
                                 options: {
-                                    limit: 5000,
-                                },
-                            },
-                        ],
+                                    limit: 5000
+                                }
+                            }
+                        ]
                     },
                     {
                         test: /\.svg$/,
-                        use: "svg-inline-loader",
-                    },
-                ],
+                        use: 'svg-inline-loader'
+                    }
+                ]
             },
-            plugins: [new webpack.ProgressPlugin()],
+            plugins: [new webpack.ProgressPlugin()]
         },
         modeConfig(mode),
-        presetConfig({ mode, presets }),
+        presetConfig({ mode, presets })
     );
 };
