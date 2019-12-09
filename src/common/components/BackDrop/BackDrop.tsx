@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { cyanBlue } from '../../../utilities';
+import { cyanBlue } from '../../utilities';
 import { transparentize } from 'polished';
 
 interface Props {

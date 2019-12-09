@@ -1,8 +1,8 @@
 import React from 'react';
 import ColorList from '../ColorList/ColorList';
 import styled from 'styled-components';
-import { Wrapper } from '../../utilities';
-import { ColorElement } from '../../../types';
+import { ColorElement } from '../../../../types';
+import { Wrapper } from '../../../../common/utilities';
 
 interface Props {
     colors: ColorElement[];

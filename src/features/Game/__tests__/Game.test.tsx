@@ -1,10 +1,10 @@
 import React from 'react';
 import { mount, ReactWrapper } from 'enzyme';
 import Game from '../Game';
-import NavBar from '../../../common/components/NavBar/NavBar';
-import ColorLists from '../../../common/components/ColorLists/ColorLists';
-import ColorList from '../../../common/components/ColorList/ColorList';
-import Modal from '../../../common/components/UIElements/Modal/Modal';
+import NavBar from '../components/NavBar/NavBar';
+import ColorLists from '../components/ColorLists/ColorLists';
+import ColorList from '../components/ColorList/ColorList';
+import Modal from '../../../common/components/Modal/Modal';
 
 describe('Game', (): void => {
     let wrapper: ReactWrapper;

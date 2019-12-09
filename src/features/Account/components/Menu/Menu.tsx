@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import ProfileIcon from '../../../../common/components/UIElements/ProfileIcon/ProfileIcon';
+import ProfileIcon from '../../../../common/components/ProfileIcon/ProfileIcon';
 import { gray, cyanBlue } from '../../../../common/utilities';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';

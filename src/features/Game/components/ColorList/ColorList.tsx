@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { ColorElement } from '../../../types';
+import { ColorElement } from '../../../../types';
 
 interface Props {
     color: ColorElement;

@@ -1,5 +1,5 @@
 import React from 'react';
-import Hover from '../../Hover/Hover';
+import Hover from '../Hover/Hover';
 import styled from 'styled-components';
 
 interface Props {

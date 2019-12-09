@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { fetchResultsThunk } from './thunks';
 import { Wrapper } from '../../../common/utilities';
 import ResultsTable from '../components/ResultsTable/ResultsTable';
-import Back from '../../../common/components/UIElements/BackToGame/BackToGame';
+import Back from '../../../common/components/BackToGame/BackToGame';
 import { Container } from '../../../common/utilities/Container';
 import { AppState } from '../../../app/rootReducer';
 

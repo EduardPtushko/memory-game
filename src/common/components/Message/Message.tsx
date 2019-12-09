@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { above } from '../../../utilities';
+import { above } from '../../utilities';
 
 interface Props {
     clicks: number;

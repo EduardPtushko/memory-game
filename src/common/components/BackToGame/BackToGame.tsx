@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Tooltip from '../Tooltip/Tooltip';
 import ArrowIcon from '../ArrowIcon/ArrowIcon';
-import { BackButton } from '../../../elements';
+import { BackButton } from '../../elements';
 
 const Back = ({ text }): JSX.Element => {
     return (

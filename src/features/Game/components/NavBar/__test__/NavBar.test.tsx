@@ -1,9 +1,9 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import NavBar from '../NavBar';
-import { Button } from '../../../../elements';
 import NumberInput from '../../NumberInput/NumberInput';
-import Tooltip from '../../UIElements/Tooltip/Tooltip';
+import { Button } from '../../../../../common/elements';
+import Tooltip from '../../../../../common/components/Tooltip/Tooltip';
 
 describe('NavBar', (): void => {
     const props = {

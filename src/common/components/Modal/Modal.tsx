@@ -1,8 +1,8 @@
 import React, { ReactNode, memo } from 'react';
 import BackDrop from '../BackDrop/BackDrop';
 import styled from 'styled-components';
-import { Button } from '../../../elements';
-import { above } from '../../../utilities';
+import { Button } from '../../elements';
+import { above } from '../../utilities';
 
 interface Props {
     show: boolean;
