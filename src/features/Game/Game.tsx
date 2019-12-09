@@ -1,10 +1,10 @@
 import React, { useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import NavBar from '../../common/components/NavBar/NavBar';
-import ColorLists from '../../common/components/ColorLists/ColorLists';
+import NavBar from './components/NavBar/NavBar';
+import ColorLists from './components/ColorLists/ColorLists';
 import { newColors, opennedColors } from '../../common/helpers';
-import Message from '../../common/components/UIElements/Message/Message';
-import Modal from '../../common/components/UIElements/Modal/Modal';
+import Message from '../../common/components/Message/Message';
+import Modal from '../../common/components/Modal/Modal';
 import { ColorElement } from '../../types';
 import { createResultThunk } from '../Result/Resulsts/thunks';
 import { AppState } from '../../app/rootReducer';
