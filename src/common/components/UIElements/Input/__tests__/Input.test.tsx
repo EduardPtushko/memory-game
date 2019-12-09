@@ -1,6 +1,7 @@
 import React from 'react';
 import { shallow, ShallowWrapper } from 'enzyme';
-import Input from '../Input';
+import renderer from 'react-test-renderer';
+import Input, { InputElement } from '../Input';
 
 let wrapper: ShallowWrapper;
 
@@ -24,19 +25,18 @@ beforeEach((): void => {
 });
 
 test('renders without error', (): void => {
-    expect(wrapper.find('.input-group')).toHaveLength(1);
-    expect(wrapper.find('.input-group-text')).toHaveLength(1);
-    expect(wrapper.find('.form-control')).toHaveLength(1);
+    expect(wrapper.find('label')).toHaveLength(1);
+    expect(wrapper.find(InputElement)).toHaveLength(1);
 });
 
 test('renders correct props', (): void => {
-    expect(wrapper.find('.input-group-text').text()).toEqual('Author');
-    expect(wrapper.find('.form-control').prop('placeholder')).toEqual(
+    expect(wrapper.find('label').text()).toEqual('Author');
+    expect(wrapper.find(InputElement).prop('placeholder')).toEqual(
         'Enter the author'
     );
-    expect(wrapper.find('.form-control').prop('value')).toEqual('Eduard');
-    expect(wrapper.find('.form-control').prop('name')).toEqual('author');
-    expect(wrapper.find('.form-control').prop('type')).toEqual('text');
+    expect(wrapper.find(InputElement).prop('value')).toEqual('Eduard');
+    expect(wrapper.find(InputElement).prop('name')).toEqual('author');
+    expect(wrapper.find(InputElement).prop('type')).toEqual('text');
 });
 
 test('calls onChange on a value changed', (): void => {
@@ -45,19 +45,15 @@ test('calls onChange on a value changed', (): void => {
             value: 'author'
         }
     };
-    wrapper.find('.form-control').simulate('change', mockTarget);
+    wrapper.find(InputElement).simulate('change', mockTarget);
 
     expect(changeFn).toHaveBeenCalled();
     expect(changeFn).toHaveBeenCalledTimes(1);
     expect(changeFn).toHaveBeenCalledWith(mockTarget);
 });
 
-test('renders "invalid" className on touched true and invlid false', (): void => {
-    wrapper = setup({
-        ...props,
-        touched: true,
-        invalid: false
-    });
+test('input border-color is red  on touched true and invlid false', (): void => {
+    const tree = renderer.create(<InputElement invalid={true} />).toJSON();
 
-    expect(wrapper.find('.invalid').exists()).toBe(true);
+    expect(tree).toHaveStyleRule('border-color', 'red');
 });
