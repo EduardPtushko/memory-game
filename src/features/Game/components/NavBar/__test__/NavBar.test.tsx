@@ -9,8 +9,7 @@ describe('NavBar', (): void => {
     const props = {
         newGame: jest.fn(),
         getNumberColors: jest.fn(),
-        initialValue: 5,
-        numberColors: 5
+        initialValue: 5
     };
     test('renders correctly', (): void => {
         const wrapper = shallow(<NavBar {...props} />);

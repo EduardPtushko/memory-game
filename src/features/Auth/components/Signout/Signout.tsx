@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { signOut } from '../../Auth/actions';
+import { signOut } from '../../AuthSlice/actions';
 import styled from 'styled-components';
 
 const Signout = (): JSX.Element => {

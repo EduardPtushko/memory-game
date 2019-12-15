@@ -17,8 +17,8 @@ export function signinUser(params: any): Promise<any> {
     return client.post('/signin', { ...params });
 }
 
-export function createResult(data: any, token: string): Promise<any> {
-    return client.post('/results', data, {
+export function createResult(params: any, token: string): Promise<any> {
+    return client.post('/results', params, {
         headers: {
             Authorization: `Bearer ${token}`
         }

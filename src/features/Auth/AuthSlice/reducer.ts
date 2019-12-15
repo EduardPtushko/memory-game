@@ -41,7 +41,6 @@ function authReducer(state = initialState, action: Action): AuthState {
                 isLoading: false,
                 username: null
             };
-
         case ActionTypes.CLEAR_ERROR:
             return {
                 ...state,

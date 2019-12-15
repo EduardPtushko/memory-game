@@ -2,22 +2,20 @@ import React from 'react';
 import { Wrapper, cyanBlue } from '../../../../common/utilities';
 import styled from 'styled-components';
 import Tooltip from '../../../../common/components/Tooltip/Tooltip';
-import Menu from '../../../Account/components/Menu/Menu';
+import Menu from '../../../Auth/components/Menu/Menu';
 import { Button } from '../../../../common/elements';
 import NumberInput from '../NumberInput/NumberInput';
 
 interface Props {
-    newGame: (num: number) => void;
+    newGame: () => void;
     initialValue: number;
     getNumberColors: (num: number) => void;
-    numberColors: number;
 }
 
 const NavBar = ({
     newGame,
     initialValue,
-    getNumberColors,
-    numberColors
+    getNumberColors
 }: Props): JSX.Element => {
     return (
         <Header>
@@ -32,9 +30,7 @@ const NavBar = ({
                                 initialValue={initialValue}
                             />
                         </Tooltip>
-                        <Button onClick={(): void => newGame(numberColors)}>
-                            New Colors
-                        </Button>
+                        <Button onClick={newGame}>New Colors</Button>
                     </div>
                     <Menu />
                 </HeaderBox>
